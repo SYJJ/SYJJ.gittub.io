@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>杨小胖的购物商城</title>
+<script src="http://www.51rgb.com/js/jquery.js"></script>
+<style>
+	html,body,div,ul,li,img{padding: 0; margin: 0;}
+		li{list-style: none;}
+	.all{ width: 100%; min-height: 2400px;}
+	.menubg{ width: 100%; height: 40px; background-color: #272727;}
+	.top{ width: 100%; height: 286px;}
+	.menu_content{margin: 0 auto; width: 1200px; height: 100%;}
+	.menu_left ul li{float: left; color:#8C8C8C; font-size: 15px; padding:0 5px; border-right:1px solid #3F3F3F;}
+	.menu_left{padding-top: 10px; float: left;}
+	.menu_left ul li a{text-decoration: none; color:#8C8C8C; }
+	.menu_left ul li a:hover{color: #FFFFFF;}
+	.menu_right{float: right;}
+	.menu_right ul li{float: left; color:#8C8C8C; font-size: 15px; padding:0 5px; line-height: 40px;}
+	.menu_left_last{border-right:0px!important;}
+	.line{margin-left: 10px; color: #3F3F3F;}
+	.menu_right ul li a{text-decoration: none; color:#8C8C8C; }
+	.menu_right ul li a:hover{color: #FFFFFF;}
+	.menu_right ul{float: left;}
+	.gouwuche{float: left; height: 40px; color: #8C8C8C; font-size: 15px; line-height: 40px; width: 100px; text-align: center; background-color:#424242; margin-left: 20px; position: relative;}
+	.gouwuchesp{color:#ea990b!important;}
+	.gouwuchebg{background-color: #fff;}
+	.gouwuchecontent{display: block!important;}
+    .gouwuche_con{width: 180px;height: 70px; box-shadow: 0px 0px 5px #ccc; margin-left: -80px; position: relative; z-index:0; display: none; line-height: 70px; text-align: center;}
+    .gouwuche_a{width: 100px;height: 40px;
+    	display: block; position: relative; z-index: 1;}
+    .gouwuche a{color: #8C8C8C;text-decoration: none;background-color: #424242;}
+    .contentbg{width: 1200px;height: 80px;margin: 0 auto;}
+
+</style>
+</head>
+
+<body>
+
+<div class="all">
+	<div class="top">
+		<img src="/1421172253杨娟娟/images/top.jpg">
+	</div>
+	<div class="menubg">
+		<div class="menu_content">
+			<div class="menu_left">
+				<ul>
+					<li><a href="https://www.jd.com/2017?t=">笔记本</a></li>
+					<li><a href="left">台式机</a></li>
+					<li><a href="https://www.taobao.com/?prepvid=200_172.29.81.7_306_1515733963258&extra=&spm=a231o.7076277.1581860521.1.708fcabcGSUU67&pid=mm_129021960_40306128_154012418&clk1=&unid=&source_id=&app_pvid=200_172.29.81.7_306_1515733963258">显示器</a></li>
+					<li><a href="https://list.jd.com/list.html?cat=670,686,690">鼠标</a></li>
+					<li><a href="https://list.jd.com/list.html?cat=670,686,689">键盘</a></li>
+					<li><a href="https://www.apple.com/cn//?afid=p238%7Ck6fuH95H_mtid_18707vxu38484&cid=aos-cn-kwsg-brand">iPhone</a></li>
+					<li><a href="https://www.mi.com/">小米</a></li>
+					<li><a href="https://www.vmall.com/">华为</a></li>
+					<li><a href="http://www.oppo.com/cn/">OPPO</a></li>
+					<li><a href="http://www.vivo.com.cn/">vivo</a></li>
+					<li class="menu_left_last"><a href="https://www.baidu.com/?tn=72038325_5_hao_pg">Select Region</a></li>
+				
+				</ul>
+			</div>
+			<div class="menu_right">
+				<ul>
+					<li><a href="http://www.51rgb.com">登录</a><span class="line">|</span></li>
+					<li><a href="http://www.51rgb.com">注册</a><span class="line">|</span></li>
+					<li><a href="http://www.51rgb.com">消息通知</a></li>
+				</ul>
+				<div class="gouwuche">
+					<a class="gouwuche_a" href="https://www.baidu.com/?tn=72038325_5_hao_pg">
+					<img style="width: 18px; vertical-align: middle; margin-right: 2px;" src="/1421172253杨娟娟/images/gouwuche-hui.png">
+					<span>购物车</span></a>
+					<div class="gouwuche_con">
+						购物车还是空的！来选购吧
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div class="contentbg">
+
+			<div class="content">
+				<div class="content_left">
+					<img src="/1421172253杨娟娟/images/putao.png">
+				</div>
+				<div class="content_middle"></div>
+				<div class="content_right"></div>
+			</div>
+			
+		</div>
+	</div>
+<script>
+	$(function(){
+		$(".gouwuche").mouseover(function(){
+		//鼠标浮动时的动作
+			$(".gouwuche img").attr("src","images/gouwuche-huang.png");//变换后的状态
+			$(".gouwuche span").addClass("gouwuchesp");
+			$(".gouwuche").addClass("gouwuchebg");
+			$(".gouwuche>div").slideDown();
+			
+		})	
+		$(".gouwuche").mouseout(function(){
+
+			$(".gouwuche img").attr("src","images/gouwuche-hui.png");//变换后的状态
+			$(".gouwuche span").removeClass("gouwuchesp");
+			$(".gouwuche").removeClass("gouwuchebg");
+			$(".gouwuche>div").removeClass("gouwuchecontent");
+		})
+		$("body").mouseover(function(e){
+			if($(e.target).closest(".gouwuche").length==0){
+				$(".gouwuche>div").slideUp()
+
+			}
+		})
+
+		})
+</script>
+</body>
+</html>
